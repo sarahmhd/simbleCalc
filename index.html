@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Two numbers</title>
+    <style>
+        form {
+            width: 50%;
+            margin: 10% auto;
+        }
+
+        input {
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            background: #D47271;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            cursor: pointer;
+            transform: scale(0.89);
+        }
+
+        .result {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 2rem;
+            color: #D47271;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="form-group">
+            <input type="text" name="first" id="first" placeholder="num 1">
+            <input type="text" name="second" id="second" placeholder="num 2">
+        </div>
+        <button type="submit">Add Two Numbers</button>
+    </form>
+    <div class="result">result here !</div>
+
+
+    <script>
+        let firstNum = document.querySelector("#first");
+        let secondNum = document.querySelector("#second");
+        let btn = document.querySelector("button");
+        let result = document.querySelector(".result");
+        let form = document.querySelector("form");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+        })
+
+        btn.addEventListener("click", () => {
+            result.innerText = `${firstNum.value} + ${secondNum.value} = ${+firstNum.value + +secondNum.value}`;
+            console.log(+firstNum.value + +secondNum.value);
+            firstNum.value = "";
+            secondNum.value = "";
+        })
+    </script>
+</body>
+
+
+</html>
